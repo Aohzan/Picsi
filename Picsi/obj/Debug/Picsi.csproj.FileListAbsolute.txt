@@ -1,0 +1,9 @@
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\bin\Debug\Picsi.exe.config
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\bin\Debug\Picsi.exe
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\bin\Debug\Picsi.pdb
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Debug\Picsi.csprojResolveAssemblyReference.cache
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Debug\Picsi.Picsi.resources
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Debug\Picsi.Properties.Resources.resources
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Debug\Picsi.csproj.GenerateResource.Cache
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Debug\Picsi.exe
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Debug\Picsi.pdb

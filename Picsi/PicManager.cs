@@ -12,6 +12,9 @@ namespace Picsi
     {
         public Pic GetInfos(string path)
         {
+            // Pour décoder les propriétés de l'image
+            System.Text.ASCIIEncoding encoding = new System.Text.ASCIIEncoding();
+
             var pic = new Pic
             {
                 Path = path,
@@ -19,48 +22,19 @@ namespace Picsi
                 Extension = path.Substring(path.LastIndexOf(@".") + 1)
             };
 
-            try
+            
+            using (Image image = new Bitmap(pic.Path))
             {
-                // Create an Image object. 
-                Image theImage = new Bitmap(path);
+                pic.Width = image.Width;
+                pic.Height = image.Height;
+                if (image.Tag != null)
+                    pic.Tag = image.Tag.ToString();
+                pic.Manufacturer = encoding.GetString(image.GetPropertyItem(271).Value).Replace("\0", "");
+                pic.Model = encoding.GetString(image.GetPropertyItem(272).Value).Replace("\0", "");
+                var date = encoding.GetString(image.GetPropertyItem(306).Value).Replace("\0", "");
+                pic.ShotDate = DateTime.ParseExact(date, "yyyy:MM:dd HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
 
-                // Get the PropertyItems property from image.
-                PropertyItem[] propItems = theImage.PropertyItems;
-
-                // Set up the display.
-                Font font1 = new Font("Arial", 10);
-                SolidBrush blackBrush = new SolidBrush(Color.Black);
-                int X = 0;
-                int Y = 0;
-
-                // For each PropertyItem in the array, display the id, 
-                // type, and length.
-                int count = 0;
-                foreach (PropertyItem propItem in propItems)
-                {
-                    e.Graphics.DrawString("Property Item " +
-                        count.ToString(), font1, blackBrush, X, Y);
-                    Y += font1.Height;
-
-                    e.Graphics.DrawString("   ID: 0x" +
-                        propItem.Id.ToString("x"), font1, blackBrush, X, Y);
-                    Y += font1.Height;
-
-                    e.Graphics.DrawString("   type: " +
-                        propItem.Type.ToString(), font1, blackBrush, X, Y);
-                    Y += font1.Height;
-
-                    e.Graphics.DrawString("   length: " +
-                        propItem.Len.ToString() +
-                        " bytes", font1, blackBrush, X, Y);
-                    Y += font1.Height;
-                    count += 1;
-                }
-                font1.Dispose();
-            }
-            catch (Exception)
-            {
-
+                image.Dispose();
             }
             return pic;
         }

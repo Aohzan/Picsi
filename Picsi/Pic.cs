@@ -12,5 +12,10 @@ namespace Picsi
         public string Path { get; set; }
         public string Extension { get; set; }
         public DateTime ShotDate { get; set; }
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public string Tag { get; set; }
     }
 }

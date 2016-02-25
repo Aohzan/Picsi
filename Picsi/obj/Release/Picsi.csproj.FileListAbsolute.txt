@@ -1,0 +1,8 @@
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\bin\Release\Picsi.exe.config
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\bin\Release\Picsi.exe
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\bin\Release\Picsi.pdb
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Release\Picsi.Picsi.resources
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Release\Picsi.Properties.Resources.resources
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Release\Picsi.csproj.GenerateResource.Cache
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Release\Picsi.exe
+C:\Users\Matthieu\Documents\GitHub\Picsi\Picsi\obj\Release\Picsi.pdb

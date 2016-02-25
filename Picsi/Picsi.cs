@@ -12,6 +12,7 @@ namespace Picsi
 {
     public partial class Picsi : Form
     {
+        private string pathFile;
         public Picsi()
         {
             InitializeComponent();
@@ -19,18 +20,31 @@ namespace Picsi
 
         private void Picsi_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Bienvenue :)");
-        }
 
-        private void BtnGetInfo_Click(object sender, EventArgs e)
+        }
+        
+        private void buttonChooseFile_Click(object sender, EventArgs e)
         {
-            var picM = new PicManager();
-            var info = picM.GetInfos(@"C:\Temp\photo.jpg");
-            MessageBox.Show("Informations");
-            MessageBox.Show(info.Path);
-            MessageBox.Show(info.Name);
-            MessageBox.Show(info.Extension);
-            MessageBox.Show(info.ShotDate.ToShortDateString());
+            DialogResult result = picBrowserDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                textBoxInfos.Text = "";
+                try
+                {
+                    pathFile = picBrowserDialog.FileName;
+                    var picM = new PicManager();
+                    var info = picM.GetInfos(pathFile);
+                    foreach (var prop in info.GetType().GetProperties())
+                    {
+                        textBoxInfos.AppendText(prop.Name + ": " + prop.GetValue(info) + "\r\n");
+                    }
+                    pictureBox.Image = new Bitmap(pathFile);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur : " + ex.Message);
+                }
+            }
         }
     }
 }

@@ -28,35 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChooseFile = new System.Windows.Forms.Button();
+            this.picBrowserDialog = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.textBoxInfos = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnChooseFile
             // 
-            this.button1.Location = new System.Drawing.Point(70, 70);
-            this.button1.Name = "btn_GetInfos";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Infos de la photo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BtnGetInfo_Click);
+            this.btnChooseFile.Location = new System.Drawing.Point(34, 51);
+            this.btnChooseFile.Name = "btnChooseFile";
+            this.btnChooseFile.Size = new System.Drawing.Size(100, 25);
+            this.btnChooseFile.TabIndex = 2;
+            this.btnChooseFile.Text = "Choisir un fichier";
+            this.btnChooseFile.UseVisualStyleBackColor = true;
+            this.btnChooseFile.Click += new System.EventHandler(this.buttonChooseFile_Click);
+            // 
+            // picBrowserDialog
+            // 
+            this.picBrowserDialog.Title = "Choisissez une photo";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(34, 129);
+            this.pictureBox.MaximumSize = new System.Drawing.Size(580, 450);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(580, 450);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 4;
+            this.pictureBox.TabStop = false;
+            // 
+            // textBoxInfos
+            // 
+            this.textBoxInfos.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.textBoxInfos.Location = new System.Drawing.Point(155, 12);
+            this.textBoxInfos.Multiline = true;
+            this.textBoxInfos.Name = "textBoxInfos";
+            this.textBoxInfos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxInfos.Size = new System.Drawing.Size(459, 100);
+            this.textBoxInfos.TabIndex = 5;
             // 
             // Picsi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 261);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(640, 600);
+            this.Controls.Add(this.textBoxInfos);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.btnChooseFile);
             this.Name = "Picsi";
             this.Text = "Picsi";
             this.Load += new System.EventHandler(this.Picsi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnChooseFile;
+        private System.Windows.Forms.OpenFileDialog picBrowserDialog;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.TextBox textBoxInfos;
     }
 }
 
